@@ -202,28 +202,27 @@ $(document).ready(function () {
             );
     }
 
-    for(var i = 0; i < MAX_SIDES; i++) {
-        // Set the labels to generate onchange.
-        $("#labels input").change(function() {
-            generate();
-        });
+    // Set the labels to generate onchange.
+    $("#labels input").change(function() {
+        generate();
+    });
 
-        // Set the values to generate onchange.
-        $("#values input").change(function() {
-            // Parse by float as to either implicitly strip text or return NaN.
-            $(this).val(parseFloat($(this).val()));
-            // If NaN (e.g. "text" or "t9") or less than 0, assume 0.
-            if(isNaN($(this).val()) || $(this).val() < 0) {
-                $(this).val(0);
-            }
-            // Else if value is greater than steps, assume steps.
-            else if($(this).val() > parseInt($("#stepsNum").val())) {
-                $(this).val($("#stepsNum").val());
-            }
+    // Set the values to generate onchange.
+    $("#values input").change(function() {
+        // Parse by float as to either implicitly strip text or return NaN.
+        $(this).val(parseFloat($(this).val()));
+        // If NaN (e.g. "text" or "t9") or less than 0, assume 0.
+        if(isNaN($(this).val()) || $(this).val() < 0) {
+            $(this).val(0);
+        }
+        // Else if value is greater than steps, assume steps.
+        else if($(this).val() > parseInt($("#stepsNum").val())) {
+            $(this).val($("#stepsNum").val());
+        }
 
-            generate();
-        });
-    }
+        generate();
+    });
+    
     // Assume all input values to be hidden on start.
     $("#labels input").hide();
     $("#values input").hide();
