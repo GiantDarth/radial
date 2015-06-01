@@ -153,7 +153,16 @@ $(document).ready(function () {
         $("#labels ul")
             .append($("<li>").append($("<input>").attr('id', 'label' + i)));
         $("#values ul")
-            .append($("<li>").append($("<input>").attr('id', 'value' + i).val(0)));
+            .append($("<li>")
+                .append($("<input>")
+                    .attr('type', 'number')
+                    .attr('min', '0')
+                    .attr('max', '20')
+                    .attr('id', 'value' + i)
+                    .attr('step', 'any')
+                    .val(0)
+                )
+            );
     }
 
     for(var i = 0; i < MAX_SIDES; i++) {
