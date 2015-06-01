@@ -85,7 +85,7 @@ function drawValues(n, rad, rotate, canvas, context, values, steps) {
 }
 
 function generate() {
-    var canvas = document.getElementById("myCanvas");
+    var canvas = document.getElementById("chart");
     var context = canvas.getContext("2d");
 
     var sides = $("#sidesNum").val();
