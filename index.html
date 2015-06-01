@@ -23,6 +23,13 @@
             }
         </style>
 
+        <script>
+            // Force https redirection.
+            var host = "chaos7theory.github.io"
+            if (window.location.host == host && window.location.protocol != "https:") {
+              window.location.protocol = "https:"
+            }
+        </script>
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <!-- https://github.com/bgrins/TinyColor -->
         <script src="js/tinycolor.js"></script>
